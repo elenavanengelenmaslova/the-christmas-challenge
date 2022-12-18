@@ -8,18 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/setup-node@v2
-      with:
-        node-version: "14"
-    - name: Configure aws credentials
-      uses: aws-actions/configure-aws-credentials@master
-      with:
-        aws-access-key-id: ${{ secrets.aws_access_key }}
-        aws-secret-access-key: ${{ secrets.aws_secret_key }}
-        aws-region: "eu-west-1"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.aws_access_key }}
+          aws-secret-access-key: ${{ secrets.aws_secret_key }}
+          aws-region: "eu-west-1"
 
-    - name: DEPLOY synthesize & deploy
-      run: |
-        cd ${GITHUB_WORKSPACE}/infrastructure
-        npm install -g aws-cdk
-        cdk destroy
+      - name: DEPLOY synthesize & deploy
+        run: |
+          cd ${GITHUB_WORKSPACE}/infrastructure
+          npm install -g aws-cdk
+          cdk destroy
