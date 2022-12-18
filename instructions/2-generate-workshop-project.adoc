@@ -39,6 +39,6 @@ Clap out "Details" under "Execution result: succeeded" message to see the log ou
 
 image::images/CheckLogs.png[check-logs]
 
+➡️ link:./3-add-event-bus.adoc[3. Add event bus on AWS EventBridge]
 
 ⬅️ link:./1-prerequisites.adoc[1. Prerequisites]
-➡️ link:./3-add-event-bus.adoc[3. Add event bus on AWS EventBridge]
