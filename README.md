@@ -1,4 +1,4 @@
-# the-christmas-challenge
+# The Christmas Challenge!
 Kotlin + AWS serverless workshop
 
 ## Architecture
