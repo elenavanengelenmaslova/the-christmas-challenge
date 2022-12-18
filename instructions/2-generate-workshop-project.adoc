@@ -12,7 +12,7 @@ Configure AWS access keys in GitHub Secrets:
 
 image::images/ConfigureGitHubSecrets.png[configure-github-secrets]
 
-Where AWS_ACCOUNT_ID is you AWS Account Id, AWS_ACCESS_KEY is you AWS Access Key and AWS_SECRET_KEY is yur AWS Secret Key.
+Where AWS_ACCOUNT_ID is your AWS Account Id, AWS_ACCESS_KEY is your AWS Account Access Key and AWS_SECRET_KEY is your AWS Account Secret Key.
 
 Please note that it is not recommended to use root AWS account for this. If you created a new AWS account when setting up the prerequisites, then follow instructions to secure your account https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html then use an IAM user with AdministratorAccess attached permissions for the workshop.
 
