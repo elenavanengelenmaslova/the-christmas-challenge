@@ -1,0 +1,17 @@
+= 2. Generate and configure a workshop project in GitHub
+
+In GitHub, on the main repository page of https://github.com/elenavanengelenmaslova/the-christmas-challenge template, select "Use this template" and then "Create new repository", see below:
+
+image::images/CreateRepoFromTemplate.png[create-repository-from-template]
+
+Configure AWS access keys in GitHub Secrets:
+
+image::images/ConfigureGitHubSecrets.png[configure-github-secrets]
+
+Where AWS_ACCOUNT_ID is you AWS Account Id, AWS_ACCESS_KEY is you AWS Access Key and AWS_SECRET_KEY is yur AWS Secret Key.
+
+Please note that it is not recommended to use root AWS account for this. If you created a new AWS account when setting up the prerequisites, then follow instructions to secure your account https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html then use an IAM user with AdministratorAccess attached permissions for the workshop.
+
+To test CI-CD flow, got to GitHub actions tab:
+
+⬅️ link:./1-prerequisites.adoc[1. Prerequisites]

@@ -1,0 +1,15 @@
+= 1. Prerequisites
+
+* Before you get started with the workshop, if you already haven't got an AWS account , you need to sign up to aws account:
+[Amazon Web Services](https://aws.amazon.com/marketplace/management/signin)
+During signup, you need to add your payment information which *won't* charged during the workshop, because we will stay within AWS Free Tier and will clean up resources at the end of the workshop.
+
+* GitHub account: if you do not have one, you can sign up for free at https://github.com/signup
+
+* JDK 11 (or 17): https://openjdk.java.net/install installed with `JAVA_HOME` configured appropriately
+
+* Git: https://git-scm.com/downloads
+
+* Gradle 7.6: https://gradle.org/install/
+
+* IntelliJ: https://www.jetbrains.com/help/idea/installation-guide.html
