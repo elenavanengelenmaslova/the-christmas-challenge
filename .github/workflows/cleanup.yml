@@ -16,7 +16,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.aws_access_key }}
         aws-secret-access-key: ${{ secrets.aws_secret_key }}
-        aws-region: ${{ inputs.aws_region }}
+        aws-region: "eu-west-1"
 
     - name: DEPLOY synthesize & deploy
       run: |
