@@ -1,1 +1,5 @@
 = 4. Write to DynamoDB Table
+
+➡️ link:./5-add-app-sync.adoc[5. Add AppSync configuration for GraphQL]
+
+⬅️ link:./3-add-event-bus.adoc[3. Add event bus on AWS EventBridge]
