@@ -13,7 +13,7 @@ application {
 }
 
 tasks.named("run") {
-    dependsOn(":products:packageDistribution")
+    dependsOn(":reindeer:packageDistribution")
 }
 repositories {
     mavenCentral()

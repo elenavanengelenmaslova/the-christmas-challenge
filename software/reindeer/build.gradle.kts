@@ -30,5 +30,5 @@ tasks.register<Zip>("packageDistribution") {
     }
     archiveFileName.set("function.zip")
     destinationDirectory.set(file("${project.rootDir}/build/dist"))
-    dependsOn(":products:build")
+    dependsOn(":reindeer:build")
 }
