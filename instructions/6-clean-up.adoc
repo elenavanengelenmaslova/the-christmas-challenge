@@ -1,0 +1,5 @@
+= 7. Clean up
+
+To clean up serverless resources in AWS account go to GitHub actions tab and run "Clean up stack" workflow:
+
+image::images/Clean-up.png[clean-up]

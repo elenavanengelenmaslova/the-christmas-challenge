@@ -1,0 +1,1 @@
+= 4. Write to DynamoDB Table

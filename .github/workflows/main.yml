@@ -4,8 +4,8 @@ on:
     branches: [ main ]
     paths-ignore:
       - '**.md'
-      - '**.png'
-      - '**.adoc'
+      - '/instructions/images/**.png'
+      - '/instructions/**.adoc'
   workflow_dispatch:
 
 jobs:
