@@ -4,7 +4,7 @@ Kotlin + AWS serverless workshop
 ## Architecture
 
 In this workshop we are going to build an application that processes events on event bridge with AWS Lambda; saves the result in DynamoDB NoSQL database and exposes the data via GraphQL through AWS AppSync:
-
+![event-app](instructions/images/EventApp.png)
 
 ## Instructions
 

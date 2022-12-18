@@ -13,3 +13,5 @@ During signup, you need to add your payment information which *won't* charged du
 * Gradle 7.6: https://gradle.org/install/
 
 * IntelliJ: https://www.jetbrains.com/help/idea/installation-guide.html
+
+➡️ link:./2-generate-workshop-project.adoc [2. Generate and configure a workshop project in GitHub]

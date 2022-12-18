@@ -1,8 +1,12 @@
 = 2. Generate and configure a workshop project in GitHub
 
+== 2.1 Use template to create workshop project
+
 In GitHub, on the main repository page of https://github.com/elenavanengelenmaslova/the-christmas-challenge template, select "Use this template" and then "Create new repository", see below:
 
 image::images/CreateRepoFromTemplate.png[create-repository-from-template]
+
+== 2.2 Configure GitHub access to AWS
 
 Configure AWS access keys in GitHub Secrets:
 
@@ -12,22 +16,29 @@ Where AWS_ACCOUNT_ID is you AWS Account Id, AWS_ACCESS_KEY is you AWS Access Key
 
 Please note that it is not recommended to use root AWS account for this. If you created a new AWS account when setting up the prerequisites, then follow instructions to secure your account https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html then use an IAM user with AdministratorAccess attached permissions for the workshop.
 
+== 2.3 Test configuration is working
+
 To test GitHub configuration, go to GitHub actions tab and run "Kotlin AWS Christmas Workshop CI/CD" to deploy "Merry Christmas!" AWS Lambda to your AWS account.
 
 When pipeline is green, login to AWS account and Go to Lambda Service:
 
 image::images/LambdaInMenu.png[go-to-lambda]
 
+
 Search for Christmas in Lambda search bar and select one with description "Kotlin Lambda for Christmas"
 
 image::images/SelectLambda.png[select-lambda]
+
 
 Go to the Test tab and press Test button:
 
 image::images/TestLambda.png[test-lambda]
 
+
 Clap out "Details" under "Execution result: succeeded" message to see the log output:
 
 image::images/CheckLogs.png[check-logs]
 
+
 ⬅️ link:./1-prerequisites.adoc[1. Prerequisites]
+➡️ link:./3-add-event-bus.adoc[3. Add event bus on AWS EventBridge]
