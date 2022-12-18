@@ -1,2 +1,2 @@
-# kotlin-workshop-template
-Template for Kotlin workshop
+# the-christmas-challenge
+Kotlin + AWS serverless workshop
