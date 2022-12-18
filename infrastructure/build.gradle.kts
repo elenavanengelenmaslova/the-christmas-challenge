@@ -9,7 +9,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("nl.vintik.sample.infra.InfrastructureAppKt")
+    mainClass.set("nl.vintik.workshop.aws.infra.InfrastructureAppKt")
 }
 
 tasks.named("run") {

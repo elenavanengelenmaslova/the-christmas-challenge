@@ -1,4 +1,4 @@
-name: Standard build deploy workflow for Kotlin Lambda SnapStart example
+name: Standard build deploy workflow for Kotlin AWS Christmas Workshop
 
 on:
   workflow_call:

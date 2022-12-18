@@ -1,4 +1,4 @@
-name: Kotlin Lambda SnapStart Example CI/CD
+name: Kotlin AWS Christmas Workshop CI/CD
 on:
   push:
     branches: [ main ]
