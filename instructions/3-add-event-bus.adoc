@@ -1,5 +1,129 @@
 = 3. Add event bus on AWS EventBridge
 
+Here we are going to add EventBridge event bus and event rule with our Lambda as target, so that Lambda gets invoked for every event placed on the event bus.
+
+image::images/EventToLambda.png[event-to-lambda]
+
+== 3.1 Implement an event
+First we need to add a data class that will contain event data, and update our lambda handler to receive that data.
+
+Create package `nl.vintik.workshop.aws.lambda.model` and add new data class EventBridgeMessage in that package:
+
+[source,kotlin]
+----
+data class EventBridgeMessage <T>(
+    var detail: T? = null,
+    var region: String = "",
+    var source: String = "",
+    var time: String = ""
+)
+----
+This is a generic container data class for event bridge events, can be reused.
+
+Add Reindeer data class to the same package, this is our specific event detail data class:
+
+[source,kotlin]
+----
+data class Reindeer(
+    var id: String = "",
+    var name: String = "",
+    var speed: Int = 0,
+    var skill: String? = null,
+    var description: String? = null
+)
+----
+
+NOTE: Both data classes have default constructor enabled and are mutable, this is because we are using default serialization mechanism of AWS SDK for java which creates object before it populates it with data.
+
+Now update our Lambda handler `KotlinLambda` to receive event bridge event:
+
+[source,kotlin]
+----
+class KotlinLambda : RequestHandler<EventBridgeMessage<Reindeer>, String> {
+    private val logger = LoggerFactory.getLogger(this::class.java)
+
+    override fun handleRequest(event: EventBridgeMessage<Reindeer>, context: Context): String {
+        logger.info("Handle request for event $event")
+        return "Merry Christmas!"
+    }
+}
+----
+
+== 3.2 Create an event bus and rule in CDK infrastructure
+
+Now that Lambda code is ready to receive events from the EventBridge event bus, we can add infrastructure for the event bus and event rule with our Lambda as target.
+
+In `InfrastructureChristmasStack` assign lambda function to `val function` and then add:
+
+[source,kotlin]
+----
+       //create event bus
+        val eventBus =
+            EventBus.Builder.create(this, "eventBus")
+                .eventBusName("ChristmasEventBus")
+                .build()
+
+        //add rule and configure our lambda as target
+        Rule.Builder.create(this, "eventRule")
+            .eventBus(eventBus)
+            .eventPattern(EventPattern.builder()
+                .source(listOf("Santa"))
+                .build())
+            .targets(listOf(LambdaFunction(function)))
+            .build()
+----
+
+To build the changes locally you can run in the root of the project:
+
+[source,sh]
+----
+./gradlew build
+----
+
+Let's roll this out and try it in AWS console.
+
+Commit and push the changes to GitHub, this will start the CI/CD pipeline for building, packaging and then deploying our app to AWS account.
+
+Check CI/CD pipeline has succeeded by navigating to Actions tab of your GitHub repository:
+
+image::images/AddEventBridgeGitHub.png[ci-cd]
+
+Login to AWS Console and navigate to EventBridge service, then under Busses menu on the left, select Event busses. On the Event busses page select "Send events" button:
+
+image::images/SendEventButton.png[send-events-button]
+
+Fill in event entry form.
+
+For event bus, select our new `ChristmasEventBus` from the dropdown; fill `Santa` in EventSource field; fill `Reindeer` in Detail type, this field is currently not used in our event rule, but could be also used to filter events. In Event detail fill in the following json which matches our Reindeer data class:
+
+[source,json]
+----
+{
+  "id": "1",
+  "name": "Dasher",
+  "speed": 100,
+  "skill": "Sewing",
+  "description": "He loves to go fast!"
+}
+----
+
+image::images/EventEntryForm.png[event-entry-form]
+
+Then press the Send button, and you should now see a success page:
+
+image::images/EventSentSuccess.png[send-success]
+
+
+Let us now check if Lambda has processed our event.
+
+Go to AWS Lambda service, search for "Christmas" and select Lambda with description `Kotlin Lambda for Christmas`. Then select Monitor tab then press "View in Cloudwatch" button. Scroll down to Log streams table and select the latest log:
+
+image::images/FindLogs.png[find-logs]
+
+You should see your new Reindeer event in the latest log:
+
+image::images/LogReindeerEvent.png[event-in-log]
+
 ➡️ link:./4-add-dynamoDB.adoc[4. Write to DynamoDB Table]
 
 ⬅️ link:./2-generate-workshop-project.adoc[2. Generate and configure a workshop project in GitHub]

@@ -12,20 +12,22 @@ Configure AWS access keys in GitHub Secrets:
 
 image::images/ConfigureGitHubSecrets.png[configure-github-secrets]
 
-Where AWS_ACCOUNT_ID is your AWS Account Id, AWS_ACCESS_KEY is your AWS Account Access Key and AWS_SECRET_KEY is your AWS Account Secret Key.
+Where `AWS_ACCOUNT_ID` is your AWS Account Id, `AWS_ACCESS_KEY` is your AWS Account Access Key and `AWS_SECRET_KEY` is your AWS Account Secret Key.
 
-Please note that it is not recommended to use root AWS account for this. If you created a new AWS account when setting up the prerequisites, then follow instructions to secure your account https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html then use an IAM user with AdministratorAccess attached permissions for the workshop.
+
+NOTE: It is not recommended to use root AWS account for this. If you created a new AWS account when setting up the prerequisites, then follow instructions to secure your account link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html[AWS account root user], then for the workshop use an IAM user with AdministratorAccess permissions.
+
 
 == 2.3 Test configuration is working
 
-To test GitHub configuration, go to GitHub actions tab and run "Kotlin AWS Christmas Workshop CI/CD" to deploy "Merry Christmas!" AWS Lambda to your AWS account.
+To test GitHub configuration, go to GitHub actions tab and run `Kotlin AWS Christmas Workshop CI/CD` to deploy "Merry Christmas!" AWS Lambda to your AWS account.
 
-When pipeline is green, login to AWS account and Go to Lambda Service:
+When pipeline is green, login to AWS account and go to Lambda Service:
 
 image::images/LambdaInMenu.png[go-to-lambda]
 
 
-Search for Christmas in Lambda search bar and select one with description "Kotlin Lambda for Christmas"
+Search for "Christmas" in Lambda search bar and select one with description `Kotlin Lambda for Christmas`
 
 image::images/SelectLambda.png[select-lambda]
 

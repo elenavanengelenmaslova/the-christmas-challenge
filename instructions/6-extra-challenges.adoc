@@ -1,0 +1,22 @@
+= 6. Extra challenges
+
+If you completed the workshop and are looking to do tasks without following step-by-step instructions, then these are some nice challenges to try. Try them in any order.
+
+== 6.1 Use DynamoDb Streams
+
+Enable DynamoDB stream on Reindeer table, process change events with AWS Lambda by comparing what has changed and logging that at Info level. If an existing item has changed, log fields that changed (before and after value).
+
+== 6.2 Add another method to GraphQL API
+
+Add another API method that gets Reindeer by name.
+
+TIP: You can use DynamoDB global secondary index for this.
+
+== 6.3 Use a scheduled AWS Lambda
+
+Schedule a new AWS Lambda to run 1 x hour. Lambda should count all the reindeer in Reindeer table and log the result on Info level. Eventual consistency is fine here.
+
+
+➡️ link:./7-clean-up.adoc[7. Clean up resources]
+
+⬅️ link:./5-add-app-sync.adoc[5. Add AppSync GraphQL API]
