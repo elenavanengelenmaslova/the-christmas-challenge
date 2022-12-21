@@ -13,7 +13,7 @@ Let's first add a GraphQL CDK dependency to the gradle build file `build.gradle.
 implementation("software.amazon.awscdk:appsync-alpha:2.55.1-alpha.0")
 ----
 
-First let us define our graphql schema. In `infrastracture` -> `src` -> `main` create the following `resources` structure:
+Then let us define our graphql schema. In `infrastracture` -> `src` -> `main` create the following `resources` structure:
 
 image::images/ResourcesSchemas.png[resources-schemas-graphql]
 
