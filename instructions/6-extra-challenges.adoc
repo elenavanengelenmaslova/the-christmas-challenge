@@ -6,6 +6,8 @@ If you completed the workshop and are looking to do tasks without following step
 
 Enable DynamoDB stream on Reindeer table, process change events with AWS Lambda by comparing what has changed and logging that at Info level. If an existing item has changed, log fields that changed (before and after value).
 
+TIP: for new lambda implementation you would need to create a new gradle module in `software. Make sure the zip file name is unique, so something other than `function.zip` , see `packageDistribution` task in `build.gradle.kts`. This zip file name is then referenced from infrastructure stack.
+
 == 6.2 Add another method to GraphQL API
 
 Add another API method that gets Reindeer by name.
@@ -16,6 +18,7 @@ TIP: You can use DynamoDB global secondary index for this.
 
 Schedule a new AWS Lambda to run 1 x hour. Lambda should count all the reindeer in Reindeer table and log the result on Info level. Eventual consistency is fine here.
 
+TIP: for new lambda implementation you would need to create a new gradle module in `software. Make sure the zip file name is unique, so something other than `function.zip` , see `packageDistribution` task in `build.gradle.kts`. This zip file name is then referenced from infrastructure stack.
 
 ➡️ link:./7-clean-up.adoc[7. Clean up resources]
 
