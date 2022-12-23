@@ -7,7 +7,7 @@ image::images/EventToLambda.png[event-to-lambda]
 == 3.1 Implement an event
 First we need to add a data class that will contain event data, and update our lambda handler to receive that data.
 
-Create package `nl.vintik.workshop.aws.lambda.model` and add new data class EventBridgeMessage in that package:
+Create package `nl.vintik.workshop.aws.lambda.model` in `software` -> `raindeer` module and add new data class EventBridgeMessage in that package:
 
 [source,kotlin]
 ----
