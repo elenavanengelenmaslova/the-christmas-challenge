@@ -26,3 +26,5 @@ Some useful links on event driven architecture:
 5. [Add AppSync GraphQL API](instructions/5-add-app-sync.adoc)
 6. [Extra challenges](instructions/6-extra-challenges.adoc)
 7. [Clean up resources](instructions/7-clean-up.adoc)
+
+> **_NOTE:_** solution can be found in this repository: https://github.com/elenavanengelenmaslova/the-christmas-challenge-solution
